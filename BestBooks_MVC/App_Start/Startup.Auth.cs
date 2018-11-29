@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using BestBooks_MVC.Models;
+using BestBooks.Data;
 
 namespace BestBooks_MVC
 {

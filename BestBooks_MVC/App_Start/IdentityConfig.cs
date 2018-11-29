@@ -11,6 +11,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using BestBooks_MVC.Models;
+using BestBooks.Data;
 
 namespace BestBooks_MVC
 {

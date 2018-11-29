@@ -257,6 +257,20 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BestBooks.Data\BestBooks.Data.csproj">
+      <Project>{a5bfd54d-deba-4993-a73c-dff48f5f4adb}</Project>
+      <Name>BestBooks.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BestBooks.Models\BestBooks.Models.csproj">
+      <Project>{b800f7cc-ced3-41c9-88a6-a1d09b668791}</Project>
+      <Name>BestBooks.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BestBooks.Services\BestBooks.Services.csproj">
+      <Project>{894cb6a2-4fa7-476e-b7f4-c100adc3d207}</Project>
+      <Name>BestBooks.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
