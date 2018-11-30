@@ -21,6 +21,6 @@ namespace BestBooks.Data
         [Required]
         public  Genre BookGenre { get; set; }
         public int ReviewId { get; set; }
-        public decimal BookRating { get; set; }
+        public decimal AvgBookRating { get; set; }
     }
 }
