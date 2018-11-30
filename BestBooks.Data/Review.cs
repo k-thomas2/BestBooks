@@ -23,6 +23,7 @@ namespace BestBooks.Data
         public virtual Book Book { get; set; }
         [Required]
         public int Rating { get; set; }
+        [Key]
         public Guid OwnerId { get; set; }
     }
 }
