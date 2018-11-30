@@ -29,7 +29,7 @@ namespace BestBooks.Data
                 return new ApplicationDbContext();
             }
 
-            public DbSet<Note> Notes { get; set; }
+            public DbSet<Book> Books { get; set; }
 
             protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {
