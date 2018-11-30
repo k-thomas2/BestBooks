@@ -16,6 +16,7 @@ namespace BestBooks.Data
         [Required]
         public string AuthorName { get; set; }
         [Required]
+        [MaxLength(500, ErrorMessage ="There are too many characters in this field.")]
         public string Summary { get; set; }
         [Key]
         public int BookId { get; set; }
