@@ -7,6 +7,7 @@ using Microsoft.Owin.Security.Google;
 using Owin;
 using BestBooks_MVC.Models;
 using BestBooks.Data;
+using static BestBooks.Data.ApplicationUser;
 
 namespace BestBooks_MVC
 {

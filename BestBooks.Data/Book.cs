@@ -9,6 +9,7 @@ namespace BestBooks.Data
 {
     public class Book
     {
+        List<Book> _books = new List<Book>();
        public enum Genre { scienceFiction, satire, drama, action, romance, mystery, horror, selfHelp, health, guide, childrens, spirituality, science, history, fantasy, comic, journal, series, biography, autobiography, poetry}
         [Key]
         public int BookId { get; set; }

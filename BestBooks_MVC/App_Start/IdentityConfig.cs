@@ -12,6 +12,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using BestBooks_MVC.Models;
 using BestBooks.Data;
+using static BestBooks.Data.ApplicationUser;
 
 namespace BestBooks_MVC
 {
