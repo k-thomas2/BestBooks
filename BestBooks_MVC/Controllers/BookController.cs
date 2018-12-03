@@ -50,6 +50,17 @@ namespace BestBooks_MVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateBookService();
+            var model = svc.GetBookById(id);
+
+            return View(model);
+        }
+
+
+
+
         private BookService CreateBookService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

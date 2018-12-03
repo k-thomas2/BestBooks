@@ -55,11 +55,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookCreate.cs" />
+    <Compile Include="BookDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BestBooks.Data\BestBooks.Data.csproj">
+      <Project>{A5BFD54D-DEBA-4993-A73C-DFF48F5F4ADB}</Project>
+      <Name>BestBooks.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

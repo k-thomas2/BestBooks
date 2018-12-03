@@ -58,5 +58,27 @@ namespace BestBooks.Services
                 return query.ToArray();
             }
         }
+
+        public BookDetail GetBookById(int id)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Books
+                        .Single(e => e.BookId == bookId && e.OwnerId == _userId);
+                return
+                    new BookDetail
+                    {
+                        BookId = entity.BookId,
+                        Title = entity.Title,
+                        AuthorName = entity.AuthorName,
+                        Description = entity.Description,
+                        BookGenre = entity.BookGenre,
+                        AvgBookRating = entity.AvgBookRating
+
+                    };
+            }
+        }
     }
 }
