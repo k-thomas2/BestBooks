@@ -35,14 +35,20 @@ namespace BestBooks_MVC.Controllers
         {
             if (!ModelState.IsValid)
             {
-            return View(model);
+                return View(model);
             }
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new BookService(userId);
+            var service = CreateBookService();
 
             service.CreateBook(model);
             return RedirectToAction("Index");
 
+        }
+
+        private BookService CreateBookService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new BookService(userId);
+            return service;
         }
     }
 }

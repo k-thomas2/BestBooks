@@ -24,9 +24,9 @@ namespace BestBooks.Data
         public int ReviewId { get; set; }
         public decimal AvgBookRating { get; set; }
 
-        public static implicit operator Book(Book v)
-        {
-            throw new NotImplementedException();
-        }
+        //public static implicit operator Book(Book v)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
