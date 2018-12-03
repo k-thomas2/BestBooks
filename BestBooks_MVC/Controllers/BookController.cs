@@ -1,5 +1,7 @@
 ﻿using BestBooks.Models;
+using BestBooks.Services;
 using BestBooks_MVC.Models;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +16,10 @@ namespace BestBooks_MVC.Controllers
         // GET: Book
         public ActionResult Index()
         {
-            var model = new BookListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new BookService(userId);
+            var model = service.GetBooks();
+
             return View(model);
         }
 
@@ -28,11 +33,16 @@ namespace BestBooks_MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(BookCreate model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
-            }
             return View(model);
+            }
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new BookService(userId);
+
+            service.CreateBook(model);
+            return RedirectToAction("Index");
+
         }
     }
 }
