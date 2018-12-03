@@ -41,7 +41,7 @@ namespace BestBooks_MVC.Controllers
 
             if (service.CreateBook(model))
             {
-                ViewBag.SaveResult = "Your book was added.";
+                TempData["SaveResult"] = "Your book was added.";
                 return RedirectToAction("Index");
             };
 
