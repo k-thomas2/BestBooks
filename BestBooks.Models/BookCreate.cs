@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BestBooks.Models
 {
-    class BookCreate
+     public class BookCreate
     {
         [Required]
         public string Title { get; set; }
@@ -16,6 +16,11 @@ namespace BestBooks.Models
         [Required]
         public string Description { get; set; }
         public string Genre { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
 
     }
 }
