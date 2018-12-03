@@ -16,11 +16,8 @@ namespace BestBooks.Models
         [Required]
         public string Description { get; set; }
         public string Genre { get; set; }
+        public int Rating { get; set; }
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
-
+        public override string ToString() => Title;
     }
 }

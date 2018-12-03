@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BestBooks.Data\BestBooks.Data.csproj">
+      <Project>{a5bfd54d-deba-4993-a73c-dff48f5f4adb}</Project>
+      <Name>BestBooks.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BestBooks.Models\BestBooks.Models.csproj">
+      <Project>{b800f7cc-ced3-41c9-88a6-a1d09b668791}</Project>
+      <Name>BestBooks.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
