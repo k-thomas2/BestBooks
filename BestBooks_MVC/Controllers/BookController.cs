@@ -39,9 +39,15 @@ namespace BestBooks_MVC.Controllers
             }
             var service = CreateBookService();
 
-            service.CreateBook(model);
-            return RedirectToAction("Index");
+            if (service.CreateBook(model))
+            {
+                ViewBag.SaveResult = "Your book was added.";
+                return RedirectToAction("Index");
+            };
 
+            ModelState.AddModelError("", "Book could not be added.");
+
+            return View(model);
         }
 
         private BookService CreateBookService()
