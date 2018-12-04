@@ -37,7 +37,7 @@ namespace BestBooks_MVC.Controllers
 
            if(service.CreateReview(model))
             {
-                ViewBag.SaveResult = "Your review has been created.";
+                TempData["SaveResult"] = "Your review has been created.";
             return RedirectToAction("Index");
             };
 
