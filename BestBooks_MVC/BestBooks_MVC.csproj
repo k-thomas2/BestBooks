@@ -253,6 +253,7 @@
     <Content Include="Views\Review\IndexR.cshtml" />
     <Content Include="Views\Review\CreateR.cshtml" />
     <Content Include="Views\Review\Details.cshtml" />
+    <Content Include="Views\Review\EditR.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

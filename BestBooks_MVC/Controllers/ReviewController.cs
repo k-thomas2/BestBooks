@@ -47,7 +47,7 @@ namespace BestBooks_MVC.Controllers
 
         }
 
-        private ReviewService CreateReviewService()
+        public ReviewService CreateReviewService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new ReviewService(userId);
@@ -61,6 +61,22 @@ namespace BestBooks_MVC.Controllers
 
             return View(model);
         }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateReviewService();
+            var detail = service.GetReviewById(id);
+            var model =
+                new ReviewEdit
+                {
+                    ReviewId = detail.ReviewId,
+                    Title = detail.Title,
+                    Summary = detail.Summary,
+                    ReviewContent = detail.ReviewContent
+                };
+            return View(model);
+        }
+
 
     }
 }
