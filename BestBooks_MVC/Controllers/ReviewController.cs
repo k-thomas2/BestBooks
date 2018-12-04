@@ -61,7 +61,7 @@ namespace BestBooks_MVC.Controllers
 
             return View(model);
         }
-
+        //Review Edit 
         public ActionResult Edit(int id)
         {
             var service = CreateReviewService();
@@ -76,7 +76,28 @@ namespace BestBooks_MVC.Controllers
                 };
             return View(model);
         }
+        //POST: Review Edit 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ReviewEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
 
+            if(model.ReviewId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateReviewService();
+            if (service.UpdateReview(model))
+            {
+                TempData["SaveResult"] = "Your review was updated.";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your review could not be updated.");
+            return View(model);
+        }
 
     }
 }
