@@ -255,6 +255,7 @@
     <Content Include="Views\Review\Details.cshtml" />
     <Content Include="Views\Review\EditR.cshtml" />
     <Content Include="Views\Review\DeleteR.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTimeOffSet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
