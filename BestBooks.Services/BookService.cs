@@ -80,5 +80,24 @@ namespace BestBooks.Services
                     };
             }
         }
+
+        public bool UpdateBook(BookEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Books
+                        .Single(e => e.BookId == model.BookId && e.OwnerId == _userId);
+                entity.Title = model.Title;
+                entity.AuthorName = model.AuthorName;
+                entity.Description = model.Description;
+                entity.BookGenre = model.BookGenre;
+                entity.AvgBookRating = model.AvgBookRating;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 }
