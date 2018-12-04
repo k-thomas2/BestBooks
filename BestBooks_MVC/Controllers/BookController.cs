@@ -58,6 +58,23 @@ namespace BestBooks_MVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateBookService();
+            var detail = service.GetBookById(id);
+            var model =
+                new BookEdit
+                {
+                    BookId = detail.BookId,
+                    Title = detail.Title,
+                    AuthorName = detail.AuthorName,
+                    Description = detail.Description,
+                    BookGenre = detail.BookGenre,
+                    AvgBookRating = detail.AvgBookRating
+                };
+            return View(model);
+        }
+
 
 
 
