@@ -16,5 +16,10 @@ namespace BestBooks_MVC.Controllers
             var model = new ReviewListItem[0];
             return View(model);
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }
