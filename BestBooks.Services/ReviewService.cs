@@ -97,5 +97,20 @@ namespace BestBooks.Services
             }
 
         }
+
+        //Delete Review
+        public bool DeleteReview(int reviewId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Review
+                        .Single(e => e.ReviewId == reviewId && e.OwnderId == _userId);
+                ctx.Review.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

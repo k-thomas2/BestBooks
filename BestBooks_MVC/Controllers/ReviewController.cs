@@ -53,7 +53,7 @@ namespace BestBooks_MVC.Controllers
             var service = new ReviewService(userId);
             return service;
         }
-
+        //Review Details 
         public ActionResult Details(int id)
         {
             var svc = CreateReviewService();
@@ -99,5 +99,28 @@ namespace BestBooks_MVC.Controllers
             return View(model);
         }
 
+        //Delete reviews
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateReviewService();
+            var model = svc.GetReviewById(id);
+
+            return View(model);
+        }
+        //POST: Delete reviews
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteReview(int id)
+        {
+            var service = CreateReviewService();
+
+            service.DeleteReview(id);
+
+            TempData["SaveResult"] = "Your review was deleted.";
+
+            return RedirectToAction("Index");
+        }
     }
 }
