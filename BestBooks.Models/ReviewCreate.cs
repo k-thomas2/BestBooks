@@ -16,9 +16,7 @@ namespace BestBooks.Models
         public string Summary { get; set; }
         public string ReviewContent { get; set; }
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+        public override string ToString() => Title;
+      
     }
 }
