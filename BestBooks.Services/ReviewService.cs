@@ -56,5 +56,28 @@ namespace BestBooks.Services
                 return query.ToArray();
             }
         }
+
+        //GET Reviews by Id
+        public ReviewDetail GetReviewById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Review
+                        .Single(e => e.ReviewId == reviewId && e.OwnderId == _userId);
+                return
+                    new ReviewDetail
+                    {
+                        ReviewId = entity.ReviewId,
+                        Title = entity.Title,
+                        Summary = entity.Summary,
+                        ReviewContent = entity.ReviewContent,
+                        CreatedUtc = entity.CreatedUtc,
+                        ModifiedUtc = entity.ModifiedUtc
+                    };
+            }
+        }
+
     }
 }

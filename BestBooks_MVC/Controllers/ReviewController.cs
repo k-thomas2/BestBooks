@@ -53,5 +53,14 @@ namespace BestBooks_MVC.Controllers
             var service = new ReviewService(userId);
             return service;
         }
+
+        public ActionResult Details(int id)
+        {
+            var svc = CreateReviewService();
+            var model = svc.GetReviewById(id);
+
+            return View(model);
+        }
+
     }
 }
