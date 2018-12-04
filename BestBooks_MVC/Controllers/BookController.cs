@@ -99,6 +99,29 @@ namespace BestBooks_MVC.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateBookService();
+            var model = svc.GetBookById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteBook(int id)
+        {
+            var service = CreateBookService();
+
+            service.DeleteBook(id);
+
+            TempData["SaveResult"] = "Your book was deleted";
+
+            return RedirectToAction("Index");
+        }
+
 
 
         private BookService CreateBookService()
