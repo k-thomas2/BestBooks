@@ -75,6 +75,29 @@ namespace BestBooks_MVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, BookEdit model)
+        {
+           if(!ModelState.IsValid) return View(model);
+
+           if(model.BookId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateBookService();
+
+            if (service.UpdateBook(model))
+            {
+                TempData["SaveResult"] = "Your book was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your book could not be updated.");
+            return View(model);
+        }
 
 
 
