@@ -3,8 +3,6 @@ using BestBooks.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static BestBooks.Data.ApplicationUser;
 
 namespace BestBooks.Services
@@ -34,6 +32,28 @@ namespace BestBooks.Services
             {
                 ctx.Review.Add(entity);
                 return ctx.SaveChanges() == 1;
+            }
+        }
+
+        //Get Reviews
+        public IEnumerable<ReviewListItem> GetReviews()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Review
+                        .Where(e => e.OwnderId == _userId)
+                        .Select(
+                                e =>
+                                    new ReviewListItem
+                                    {
+                                        ReviewId = e.ReviewId,
+                                        Title = e.Title,
+                                        CreatedUtc = e.CreatedUtc
+                                    }
+                                     );
+                return query.ToArray();
             }
         }
     }
