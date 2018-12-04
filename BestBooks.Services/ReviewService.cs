@@ -79,5 +79,23 @@ namespace BestBooks.Services
             }
         }
 
+        //Update Reviews
+        public bool UpdateReview(ReviewEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Review
+                        .Single(e => e.ReviewId == model.ReviewId && e.ReviewId == _userId);
+                entity.Title = model.Title;
+                entity.Summary = model.Summary;
+                entity.ReviewContent = model.ReviewContent;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+            }
+
+        }
     }
 }
