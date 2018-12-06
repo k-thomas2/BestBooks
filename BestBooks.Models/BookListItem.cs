@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using static BestBooks.Data.Book;
 
-namespace BestBooks_MVC.Models
+namespace BestBooks.Models
 {
     public class BookListItem
     {
@@ -15,6 +15,6 @@ namespace BestBooks_MVC.Models
         public int Rating { get; set; }
 
         public override string ToString() => Title;
-        
+
     }
 }

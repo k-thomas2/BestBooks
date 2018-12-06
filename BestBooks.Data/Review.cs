@@ -11,7 +11,7 @@ namespace BestBooks.Data
     {
         [Key]
         public int ReviewId { get; set; }
-        public Guid OwnderId { get; set; }
+        public Guid OwnerId { get; set; }
         [Required]
         public string Title { get; set; }
         [Required]

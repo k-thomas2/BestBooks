@@ -28,7 +28,7 @@ namespace BestBooks.Services
                     AuthorName = model.Author,
                     Description = model.Description,
                     AvgBookRating = model.Rating,
-                    BookGenre = Enum.Parse(model.Genre),
+                    BookGenre = model.BookGenre,
                 };
             using (var ctx = new ApplicationDbContext())
             {
@@ -59,7 +59,7 @@ namespace BestBooks.Services
             }
         }
 
-        public BookDetail GetBookById(int id)
+        public BookDetail GetBookById(int bookId)
         {
             using(var ctx = new ApplicationDbContext())
             {

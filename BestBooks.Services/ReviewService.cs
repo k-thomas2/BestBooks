@@ -43,7 +43,7 @@ namespace BestBooks.Services
                 var query =
                     ctx
                         .Review
-                        .Where(e => e.OwnderId == _userId)
+                        .Where(e => e.OwnerId == _userId)
                         .Select(
                                 e =>
                                     new ReviewListItem
@@ -58,14 +58,14 @@ namespace BestBooks.Services
         }
 
         //GET Reviews by Id
-        public ReviewDetail GetReviewById(int id)
+        public ReviewDetail GetReviewById(int reviewId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Review
-                        .Single(e => e.ReviewId == reviewId && e.OwnderId == _userId);
+                        .Single(e => e.ReviewId == reviewId && e.OwnerId == _userId);
                 return
                     new ReviewDetail
                     {
@@ -87,7 +87,7 @@ namespace BestBooks.Services
                 var entity =
                     ctx
                         .Review
-                        .Single(e => e.ReviewId == model.ReviewId && e.ReviewId == _userId);
+                        .Single(e => e.ReviewId == model.ReviewId && e.OwnerId == _userId);
                 entity.Title = model.Title;
                 entity.Summary = model.Summary;
                 entity.ReviewContent = model.ReviewContent;
@@ -106,7 +106,7 @@ namespace BestBooks.Services
                 var entity =
                     ctx
                         .Review
-                        .Single(e => e.ReviewId == reviewId && e.OwnderId == _userId);
+                        .Single(e => e.ReviewId == reviewId && e.OwnerId == _userId);
                 ctx.Review.Remove(entity);
 
                 return ctx.SaveChanges() == 1;

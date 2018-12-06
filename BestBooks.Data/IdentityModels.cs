@@ -31,18 +31,6 @@ namespace BestBooks.Data
             //Books
             public DbSet<Book> Books { get; set; }
 
-            protected override void OnModelCreating(DbModelBuilder modelBuilder)
-            {
-
-                modelBuilder
-                    .Conventions
-                    .Remove<PluralizingTableNameConvention>();
-                modelBuilder
-                    .Configurations
-                    .Add(new IdentityUserLoginConfiguration())
-                    .Add(new IdentityUserRoleConfiguration());
-            }
-
             //Reviews
 
             public DbSet<Review> Review { get; set; }

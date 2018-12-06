@@ -61,6 +61,10 @@
     <Compile Include="Migrations\201812031822291_fixedkeys.Designer.cs">
       <DependentUpon>201812031822291_fixedkeys.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812061615017_fixedtypo.cs" />
+    <Compile Include="Migrations\201812061615017_fixedtypo.Designer.cs">
+      <DependentUpon>201812061615017_fixedtypo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Review.cs" />
@@ -72,6 +76,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201812031822291_fixedkeys.resx">
       <DependentUpon>201812031822291_fixedkeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812061615017_fixedtypo.resx">
+      <DependentUpon>201812061615017_fixedtypo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
