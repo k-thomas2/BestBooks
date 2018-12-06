@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BestBooks.Data.Book;
 
 namespace BestBooks.Models
 {
@@ -15,7 +16,7 @@ namespace BestBooks.Models
         public string Author { get; set; }
         [Required]
         public string Description { get; set; }
-        public string Genre { get; set; }
+        public Genre BookGenre { get; set; }
         public int Rating { get; set; }
 
         public override string ToString() => Title;
