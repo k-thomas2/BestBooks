@@ -17,7 +17,7 @@ namespace BestBooks.Models
         [Required]
         public string Description { get; set; }
         public Genre BookGenre { get; set; }
-        public int Rating { get; set; }
+        public decimal AvgBookRating { get; set; }
 
         public override string ToString() => Title;
     }
