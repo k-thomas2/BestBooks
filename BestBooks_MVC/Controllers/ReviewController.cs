@@ -15,14 +15,16 @@ namespace BestBooks_MVC.Controllers
         // GET: Review
         public ActionResult Index()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ReviewService(userId);
+            var service = CreateReviewService();
             var model = service.GetReviews();
             return View(model);
         }
 
         public ActionResult Create()
         {
+            var service = CreateBookService();
+            var books = service.GetBooks();
+            ViewBag.BookId = new SelectList(books, "BookId", "Title");
             return View();
         }
 
@@ -47,12 +49,6 @@ namespace BestBooks_MVC.Controllers
 
         }
 
-        public ReviewService CreateReviewService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ReviewService(userId);
-            return service;
-        }
         //Review Details 
         public ActionResult Details(int id)
         {
@@ -121,6 +117,19 @@ namespace BestBooks_MVC.Controllers
             TempData["SaveResult"] = "Your review was deleted.";
 
             return RedirectToAction("Index");
+        }
+
+        public ReviewService CreateReviewService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ReviewService(userId);
+            return service;
+        }
+        public BookService CreateBookService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new BookService(userId);
+            return service;
         }
     }
 }
