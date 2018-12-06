@@ -9,6 +9,7 @@ namespace BestBooks.Models
 {
     public class ReviewCreate
     {
+        public int BookId { get; set; }
         [Required]
         [MinLength(1, ErrorMessage ="Please enter at least 1 character.")]
         public string Title { get; set; }

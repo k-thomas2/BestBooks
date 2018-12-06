@@ -23,6 +23,7 @@ namespace BestBooks.Services
                 new Review()
                 {
                     OwnerId = _userId,
+                    BookId = model.BookId,
                     Title = model.Title,
                     Summary = model.Summary,
                     ReviewContent = model.ReviewContent,
