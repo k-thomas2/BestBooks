@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Create - Book</h2>
 
 
 @using (Html.BeginForm())
@@ -37,20 +37,28 @@
                 @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
             </div>
-        </div> 
+        </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.BookGenre, htmlAttributes: new { @class= "control-label col-md-2"})
+            @Html.LabelFor(model => model.BookGenre, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-            @Html.EnumDropDownListFor(model => model.BookGenre, "Select a genre", new { htmlAttributes = new { @class = "form-control"}})
+                @Html.EnumDropDownListFor(model => model.BookGenre, "Select A Genre", new { htmlAttributes = new { @class = "form-control" } })
             </div>
         </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Rating, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Rating, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Rating, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
+
     </div>
 }
 
