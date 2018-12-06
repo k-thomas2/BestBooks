@@ -22,11 +22,7 @@ namespace BestBooks.Data
         public Genre BookGenre { get; set; }
         [Required]
         public int ReviewId { get; set; }
+        public virtual Review Review { get; set; }
         public decimal AvgBookRating { get; set; }
-
-        //public static implicit operator Book(Book v)
-        //{
-        //    throw new NotImplementedException();
-        //}
     }
 }
