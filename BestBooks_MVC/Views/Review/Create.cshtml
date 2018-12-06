@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>CreateR</h2>
+<h2>Create A Review</h2>
 
 
 @using (Html.BeginForm()) 
@@ -19,7 +19,7 @@
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Title, "Please provide a title for your review.", new { @class = "text-secondary" })
             </div>
         </div>
 
@@ -27,7 +27,7 @@
             @Html.LabelFor(model => model.Summary, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Summary, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.Summary, "Please provide a summary of the book to be reviewed.", new { @class = "text-secondary" })
             </div>
         </div>
 
@@ -35,7 +35,7 @@
             @Html.LabelFor(model => model.ReviewContent, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ReviewContent, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ReviewContent, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.ReviewContent, "Please provide your review content.", new { @class = "text-secondary" })
             </div>
         </div>
 
