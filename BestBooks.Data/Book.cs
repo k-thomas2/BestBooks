@@ -10,7 +10,7 @@ namespace BestBooks.Data
         public int BookId { get; set; }
         [Required]
         readonly List<Book> _books = new List<Book>();
-        public enum Genre { scienceFiction, satire, drama, action, romance, mystery, horror, selfHelp, health, guide, childrens, spirituality, science, history, fantasy, comic, journal, series, biography, autobiography, poetry }
+        public enum Genre { ScienceFiction, Satire, Drama, Action, Romance, Mystery, Horror, SelfHelp, Health, Guide, Childrens, Spirituality, Science, History, Fantasy, Comic, Journal, Series, Biography, Autobiography, Poetry }
         public Guid OwnerId { get; set; }
         [Required]
         public string Title { get; set; }
