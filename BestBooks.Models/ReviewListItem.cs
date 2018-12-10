@@ -11,9 +11,6 @@ namespace BestBooks.Models
     {
         public int ReviewId { get; set; }
         public string Title { get; set; }
-
-       // public int BookId { get; set; }
-        //public virtual BookListItem BookList { get; set; }
         [Display(Name="Created")]
         public DateTimeOffset CreatedUtc { get; set; }
 
