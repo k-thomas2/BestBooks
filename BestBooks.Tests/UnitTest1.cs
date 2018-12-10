@@ -9,6 +9,7 @@ namespace BestBooks.Tests
         [TestMethod]
         public void TestMethod1()
         {
+
         }
     }
 }
