@@ -35,6 +35,9 @@ namespace BestBooks.Data
 
             public DbSet<Review> Review { get; set; }
 
+            //Comments
+            public DbSet<Comment> Comment { get; set; }
+
             protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {
 

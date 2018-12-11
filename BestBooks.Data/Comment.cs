@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BestBooks.Data
 {
-    class Comment
+    public class Comment
     {
         [Key]
         public int CommentId { get; set; }
