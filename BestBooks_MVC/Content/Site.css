@@ -2,6 +2,7 @@
     padding-top: 50px;
     padding-bottom: 20px;
     font-size: 14px;
+    font-family: 'Raleway', sans-serif;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -25,8 +26,9 @@ textarea {
 }
 
 .navbar-brand {
-    font-size: 23px;
+    font-size: 28px;
     border: none;
+    font-family: 'Elsie Swash Caps', cursive;
 }
 
 navbar-right a:hover{
@@ -39,5 +41,5 @@ navbar-right a:hover{
     font-size: 15px;
 }
 h2 {
-    font-size: 2.2em;
+    font-size: 2.3em;
 }
