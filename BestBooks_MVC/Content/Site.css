@@ -32,3 +32,6 @@ textarea {
 navbar-right a:hover{
     background-color: transparent;
 }
+.btn{
+    font-size: 14px;
+}
