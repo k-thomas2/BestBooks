@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201812061615017_fixedtypo.Designer.cs">
       <DependentUpon>201812061615017_fixedtypo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812111420201_comment.cs" />
+    <Compile Include="Migrations\201812111420201_comment.Designer.cs">
+      <DependentUpon>201812111420201_comment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Review.cs" />
@@ -84,6 +88,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812061615017_fixedtypo.resx">
       <DependentUpon>201812061615017_fixedtypo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812111420201_comment.resx">
+      <DependentUpon>201812111420201_comment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
