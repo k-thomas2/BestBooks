@@ -7,7 +7,7 @@
 <h2 class="text-center text-info"><span class="glyphicon glyphicon-bookmark"></span>REVIEWS</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New Review", "Create")
 </p>
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -25,7 +25,7 @@
         <th>
             @Html.DisplayNameFor(model => model.ReviewId)
         </th>
-        <th word-wrap: break-word;>
+        <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
