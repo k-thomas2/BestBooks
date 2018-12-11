@@ -25,13 +25,19 @@ textarea {
 }
 
 .navbar-brand {
-    font-size: 18px;
+    font-size: 23px;
     border: none;
 }
 
 navbar-right a:hover{
     background-color: transparent;
 }
+.nav-item{
+    font-size: 1.3em;
+}
 .btn{
-    font-size: 14px;
+    font-size: 15px;
+}
+h2 {
+    font-size: 2.2em;
 }
