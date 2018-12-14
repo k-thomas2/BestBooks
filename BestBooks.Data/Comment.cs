@@ -12,7 +12,7 @@ namespace BestBooks.Data
         [Key]
         public int CommentId { get; set; }
         public int ReviewId { get; set; }
-        public virtual Review Review { get; set; }
+        public virtual Review Review { get; set;}
         [Required]
         [MaxLength(250, ErrorMessage ="There are too many characters in this field.")]
         public string Content { get; set; }
