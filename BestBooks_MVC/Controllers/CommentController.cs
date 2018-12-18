@@ -65,6 +65,27 @@ namespace BestBooks_MVC.Controllers
                 };
             return View(model);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CommentEdit model)
+        {
+           if(!ModelState.IsValid) return View(model);
+
+           if(model.CommentId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+            var service = CreateCommentService();
+
+            if (service.UpdateComment(model))
+            {
+                TempData["SaveResult"] = "Your comment was updated";
+                return RedirectToAction("Index");
+            }
+            ModelState.AddModelError("", "Your comment could not be updated.");
+            return View(model);
+        }
 
         private CommentService CreateCommentService()
         {
