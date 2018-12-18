@@ -71,5 +71,20 @@ namespace BestBooks.Services
             }
         }
 
+        //Update comments
+        public bool UpdateComment(CommentEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Comment
+                        .Single(e => e.CommentId == model.CommentId && e.OwnerId == _userId);
+                entity.Content = model.CommentContent;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 }

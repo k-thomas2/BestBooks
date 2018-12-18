@@ -53,6 +53,19 @@ namespace BestBooks_MVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateCommentService();
+            var detail = service.GetCommentById(id);
+            var model =
+                new CommentEdit
+                {
+                    CommentId = detail.CommentId,
+                    CommentContent = detail.CommentContent
+                };
+            return View(model);
+        }
+
         private CommentService CreateCommentService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
