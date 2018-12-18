@@ -25,6 +25,9 @@ namespace BestBooks_MVC.Controllers
 
         public ActionResult Create()
         {
+            var service = CreateReviewService();
+            var reviews = service.GetReviews();
+            ViewBag.ReviewId = new SelectList(reviews, "ReviewId", "Title");
             return View();
         }
 
@@ -105,10 +108,17 @@ namespace BestBooks_MVC.Controllers
             return RedirectToAction("Index");
         }
 
-        private CommentService CreateCommentService()
+        public CommentService CreateCommentService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CommentService(userId);
+            return service;
+        }
+
+        public ReviewService CreateReviewService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ReviewService(userId);
             return service;
         }
     }
