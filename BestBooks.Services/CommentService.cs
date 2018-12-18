@@ -86,5 +86,19 @@ namespace BestBooks.Services
             }
         }
 
+        public bool DeleteComment(int CommentId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Comment
+                        .Single(e => e.CommentId == CommentId && e.OwnerId == _userId);
+                ctx.Comment.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            
+            }
+        }
     }
 }
