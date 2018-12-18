@@ -53,5 +53,23 @@ namespace BestBooks.Services
             }
         }
 
+        //GET Comments by ID 
+        public CommentDetail GetCommentById(int commentId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Comment
+                        .Single(e => e.CommentId == commentId && e.OwnerId == _userId);
+                return
+                    new CommentDetail
+                    {
+                        CommentId = entity.CommentId,
+                        CommentContent = entity.Content
+                    };
+            }
+        }
+
     }
 }
