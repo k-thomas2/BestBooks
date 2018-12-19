@@ -16,6 +16,7 @@ using Microsoft.Owin.Security.OAuth;
 using BestBooks.WebApi.Models;
 using BestBooks.WebApi.Providers;
 using BestBooks.WebApi.Results;
+using BestBooks.Data;
 
 namespace BestBooks.WebApi.Controllers
 {

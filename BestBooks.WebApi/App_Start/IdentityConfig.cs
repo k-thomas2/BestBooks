@@ -4,6 +4,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using BestBooks.WebApi.Models;
+using BestBooks.Data;
+using static BestBooks.Data.ApplicationUser;
 
 namespace BestBooks.WebApi
 {

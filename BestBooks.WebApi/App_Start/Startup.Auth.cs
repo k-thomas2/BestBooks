@@ -10,6 +10,7 @@ using Microsoft.Owin.Security.OAuth;
 using Owin;
 using BestBooks.WebApi.Providers;
 using BestBooks.WebApi.Models;
+using static BestBooks.Data.ApplicationUser;
 
 namespace BestBooks.WebApi
 {
