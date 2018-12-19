@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestBooks.Services", "BestB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestBooks.Tests", "BestBooks.Tests\BestBooks.Tests.csproj", "{3F40265E-EED7-4BE4-BD67-F7A7FC260B25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestBooks.WebApi", "BestBooks.WebApi\BestBooks.WebApi.csproj", "{CEE53D9F-C926-4427-8F5F-8B872F8F762B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestBooks.WebApi.Tests", "BestBooks.WebApi.Tests\BestBooks.WebApi.Tests.csproj", "{1E8EF0C7-6936-4C5F-95BD-C4DA92482F78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{3F40265E-EED7-4BE4-BD67-F7A7FC260B25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F40265E-EED7-4BE4-BD67-F7A7FC260B25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F40265E-EED7-4BE4-BD67-F7A7FC260B25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEE53D9F-C926-4427-8F5F-8B872F8F762B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEE53D9F-C926-4427-8F5F-8B872F8F762B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEE53D9F-C926-4427-8F5F-8B872F8F762B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEE53D9F-C926-4427-8F5F-8B872F8F762B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E8EF0C7-6936-4C5F-95BD-C4DA92482F78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E8EF0C7-6936-4C5F-95BD-C4DA92482F78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E8EF0C7-6936-4C5F-95BD-C4DA92482F78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E8EF0C7-6936-4C5F-95BD-C4DA92482F78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
